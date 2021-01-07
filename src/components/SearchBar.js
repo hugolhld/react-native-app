@@ -3,14 +3,15 @@ import { StyleSheet, TextInput, View, Image } from 'react-native';
 
 export default class SearchBar extends React.Component {
     render() {
+        img: this.props.img
         return (
             <View style={styles({}).container}>
                 <View style={styles({}).inputContainer}>
                     <Image
                     style={styles({}).tinyLogo}
-                    source={require('../img/loupe.svg')}
+                    source={this.props.img}
                     />
-                    <TextInput style={styles({isValid: false}).textInput} />
+                    <TextInput style={styles({}).textInput} />
                 </View>
             </View>
         )
@@ -22,7 +23,7 @@ const styles = (props) => StyleSheet.create({
         paddingVertical: 50,
         // paddingHorizontal: 50,
         backgroundColor: '#FF0000',
-        borderRadius: 10
+        borderRadius: 7.5
     },
 
     inputContainer: {
@@ -31,8 +32,10 @@ const styles = (props) => StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         backgroundColor: '#fff',
-        paddingVertical: 10,
+        paddingVertical: 5,
         borderRadius: 15,
+        marginHorizontal: 20,
+        marginTop: 7.5,
     },
 
     textInput: {
@@ -46,5 +49,6 @@ const styles = (props) => StyleSheet.create({
         width: 25,
         height: 25,
         marginLeft: 10,
+        resizeMode:'contain'
     }
 })
